@@ -7,8 +7,6 @@
 	
 	<div style="position: relative; left: 0; top: 0;">
   		
-  		<img src="Resources/headerBackground.jpg" class="headerBackground"/>
-
   		<img src="Resources/headerLogo.png" class="headerLogo"/>
 
   		<input type = "text"
@@ -25,6 +23,8 @@
 	</div>
 	
 </head>
+
+
 
 
 <body>
