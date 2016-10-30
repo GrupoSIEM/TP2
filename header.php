@@ -3,8 +3,8 @@
 
   <head>
 
-  	<title>RG Peças</title>
-		<link rel="stylesheet" type="text/css" href="Stylesheets/header.css">
+  	<title>RG header</title>
+		<link rel="stylesheet" type="text/css" href="Stylesheets/headerfooter.css">
   </head>
 
 
@@ -32,7 +32,7 @@
 								</div>
 
 								<a href="" class="botoesentrada">Entrar</a>
-							<a href="" class="botoesentrada">Registar</a>
+								<a href="" class="botoesentrada">Registar</a>
 							</div>      
 							
 							<div class="coluna" id="loginheader1">
@@ -59,12 +59,6 @@
 
 		</header>
 
-
-		<footer>
-			
-
-		</footer>
-    
   </body>
 
 </html>
