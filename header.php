@@ -56,6 +56,18 @@
 					</div>
 
 			</div>
+			
+			
+
+			<?php
+				$query = "select * from cidade_v2;";
+				$conn = pg_connect("host=db.fe.up.pt dbname=jfaria user=jfaria password=jfaria");
+				if (!$conn) {
+					print "ERRO: Nao foi possivel estabelecer ligacao à base de dados";
+					exit;
+					}
+				$result = pg_exec($conn, $query);
+			?>
 
 		</header>
 
