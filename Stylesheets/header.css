@@ -33,7 +33,9 @@ header{
 }
 
 .linha {
+	border-radius: 0px;
 	padding: 0% 0;
+	background: blue;
 	display: block;
 }
 
@@ -82,7 +84,6 @@ header{
 	float: right;
 	margin: 0%;
 	padding: 0% 0;
-	display: block;
 }
 
 #loginheader2 {
@@ -90,7 +91,6 @@ header{
 	float: right;
 	margin: 0%;
 	width: 25%;
-	display: block;
 }
 
 .aux {
