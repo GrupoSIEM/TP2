@@ -1,59 +1,120 @@
-
-img.headerBackground {
-	margin: 0;
-	width: 100%;
-	height: 150px;
-	z-index: 0;
-	position: relative;
-	top: 0;
-	left: 0;
-	
+body {
+	background: white;
+	font-family: arial;
+	/*padding: : 125px 0 0 0;*/
+    margin: 0 0 0 0;
 }
 
-img.headerLogo{
+header{
+    margin: 0;
+    padding: 10px 0 0 0;
+    overflow: hidden;
+    background-color: #D47404;
+    /*position: fixed;
+    top: 0;*/
+    width: 100%;
+    height: 95px;
+    display: inline-block;
+}
 
-	position: absolute;
-	top: 25px;
-	left: 35px;
-	height: 100px;
-	width: 100px;
+ header h1 {
+	margin: 0;
+    padding: 14px 16px;
+    color: white;
+} 
 
+
+.coluna {
+	margin: 0%;
+    border-radius: 0px;
+    float: left;
+    padding: 0;
+
+}
+
+.linha {
+	padding: 0% 0;
+	display: block;
+}
+
+#textologin {
+	padding: 7% 10px 7% 0;
+}
+
+
+.headerLogo{
+	margin: 5px 0;
+	height: 75px;
+	width: 75px;
+
+}
+
+.container {
+    padding: 0% 5%;
 }
 
 #utilizadorInput{
-
-	position: absolute;
-	top: 40px;
-	right: 75px;
 	height: 20px;
+	width: 100%;
+	float: right;
+
 
 }
 
 #passwordInput {
-
-	position: absolute;
-	top: 75px;
-	right: 75px;
 	height: 20px;
+	width: 100%;
+	float: right;
+	margin: 2px 0;
+
+}
+
+#espacoheader {
+	color: #D47404;
+	float: left;
+	width: 65%;
 
 
 }
 
-#utilizador{
-
-	font-family: Calibri;
-	position: absolute;
-	top: 20px;
-	right: 260px;
-
+#loginheader1 {
+	color: black;
+	float: right;
+	margin: 0%;
+	padding: 0% 0;
+	display: block;
 }
 
-#password {
+#loginheader2 {
+	color: white;
+	float: right;
+	margin: 0%;
+	width: 25%;
+	display: block;
+}
 
-font-family: Calibri;
-	position: absolute;
-	top: 55px;
-	right: 260px;
+.aux {
+	width: 70%;
+	padding: 0.3% 0;
+	float: right;
+	display: block;
+}
 
+.botoesentrada {
+	float: right;
+	display: block;
+}
 
+a:link, a:visited {
+    background-color: #D3D1CF;
+    color: white;
+    padding: 4px 8px;
+    text-align: center; 
+    text-decoration: none;
+	display: block;
+    margin: 2px 2px 0 2px;
+}
+
+a:hover, a:active {
+    background-color: #B2B0AF;
 }
