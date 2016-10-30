@@ -30,6 +30,9 @@
 						      id = "passwordInput"
 						      value="" />
 								</div>
+
+								<a href="" class="botoesentrada">Entrar</a>
+							<a href="" class="botoesentrada">Registar</a>
 							</div>      
 							
 							<div class="coluna" id="loginheader1">
@@ -47,8 +50,7 @@
 
 						<div class="linha">
 						
-							<a href="" class="botoesentrada">Entrar</a>
-							<a href="" class="botoesentrada">Registar</a>
+							
 						</div>
 
 					</div>
