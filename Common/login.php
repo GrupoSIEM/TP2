@@ -31,7 +31,7 @@
 			//Login feito com sucesso
 			session_start();
 			$_SESSION['username'] = $nome;
-			exit(header("Location: ../store.php"));
+			exit(header("Location: ../pinicial.php"));
 		} 
 		else {
 			//Login falhado
