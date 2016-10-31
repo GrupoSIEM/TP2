@@ -7,9 +7,16 @@
 
 	<body>
 		<header>
+			
 			<div class="container">
 
+			
+
       		<img src="headerLogo.png" class="headerLogo coluna"/>
+
+      			
+
+
 
       			<div class="coluna" id="caixapesquisacss">
       				
@@ -36,13 +43,13 @@
 	      		</div>
 
 
-	      		<div class="coluna">
+	      		<div class="coluna" id="carrinho">
 
 
 									<div class="dropdown">
 
 									
-									<button class="dropbtn">Usuario</button>
+									<button class="dropbtn" id="asd">Carrinho</button>
 									<div class="dropdown-content">
 										<a href="#">Perfil</a>
 										<a href="#">Encomendas</a>
@@ -53,6 +60,31 @@
 									</div>
 
 				</div>
+
+
+
+
+	      		<div class="coluna" id="usuario">
+
+
+									<div class="dropdown">
+
+									
+									<button class="dropbtn" >Utilizador</button>
+
+									<div class="dropdown-content">
+										<a href="#">Perfil</a>
+										<a href="#">Encomendas</a>
+										<a href="#">Sair</a>
+									</div>
+								
+
+									</div>
+
+				</div>
+
+
+				
 
 
       		</div>
