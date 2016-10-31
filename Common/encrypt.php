@@ -1,14 +1,14 @@
 <?php
 
-function encrypt($password){
+	function encrypt($password){
 
-	$aux = md5($password);
+		$aux = md5($password);
 
-	echo $aux;
+		echo $aux;
 
-return $aux;
+		return $aux;
 
-}
+	}
 
 
 ?>
