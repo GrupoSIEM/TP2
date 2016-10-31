@@ -12,7 +12,7 @@
 
 			
 
-      		<a href="../TP2/index.php"><img src="../Resources/headerLogo.png" class="headerLogo coluna"/></a>
+      		<a href="../index.php"><img src="../Resources/headerLogo.png" class="headerLogo coluna"/></a>
 
       			
 
