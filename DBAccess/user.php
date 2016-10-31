@@ -11,7 +11,13 @@
 		$result = pg_exec($conn, $query);
 
 		$row = pg_fetch_row($result, 0); //obter a primeira linha [0]
-		$name = $row[3];
+		
+		if(isset($row[3])) {
+			$name = $row[3];
+		} else {
+			$name = null;
+		}
+
 
 		pg_close($conn);
 

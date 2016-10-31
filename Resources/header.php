@@ -4,7 +4,7 @@
   <head>
 
   	<title>RG header</title>
-		<link rel="stylesheet" type="text/css" href="../Stylesheets/headerfooter.css">
+		<link rel="stylesheet" type="text/css" href="../TP2/Stylesheets/headerfooter.css">
   </head>
 
 
@@ -12,7 +12,7 @@
 		<header>
 			<div class="container">
 
-      		<img src="../Resources/headerLogo.png" class="headerLogo coluna"/>
+      		<a href="../TP2/index.php"><img src="../TP2/Resources/headerLogo.png" class="headerLogo coluna"/></a>
 					
 
 					<form method="POST" action="Common/login.php">

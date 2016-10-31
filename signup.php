@@ -56,6 +56,8 @@
 			    background-color: #444549;
 			}
 
+			.error {color: #FF0000;}
+
 		</style>
 	</head>
 
@@ -72,10 +74,46 @@
 		?>
 		<?php include 'Resources/header.php';?> <!-- Inclusão do header -->
 		<?php include 'Common/connectdb.php';?> <!-- Conexão à base de dados -->
-		
+		<?php include 'DBAccess/user.php';?> <!-- Biblioteca com funçoes que acedem à tabela user na BD -->
+
+		<?php
+			// define variables and set to empty values
+			$MsgErro = "";
+			$nome = $email = $telemovel = $pass1 = $pass2 = "";
+
+			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+				do {
+				  if (empty($_POST["reguser"]) || empty($_POST["regemail"]) || empty($_POST["regtelemovel"]) || empty($_POST["regpassword1"]) || empty($_POST["regpassword2"])) {
+				    $MsgErro = "Preencha todos os campos obrigatórios marcados com *";
+				    break;
+				  } else {
+				    $nome = test_input($_POST["reguser"]);
+				    $email = test_input($_POST["regemail"]);
+				    $telemovel = test_input($_POST["regtelemovel"]);
+				    $pass1 = test_input($_POST["regpassword1"]);
+				    $pass2 = test_input($_POST["regpassword2"]);
+				  }
+
+				  if()
+
+
+				} while(0);
+
+			}
+			function test_input($data) {
+			  $data = trim($data);
+			  $data = stripslashes($data);
+			  $data = htmlspecialchars($data);
+			  return $data;
+			}
+		?>
+
+
+
 		<div class="container">
 			<H3>Criar uma conta:</H3>
-			<form method="POST" action="Common/registo.php">
+			<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<table>
 				  <tr>
 				    <th colspan="3">Registo</th>
@@ -134,11 +172,17 @@
 				    </td>
 				  </tr>
 				  <tr>
-				    <td width="50%"></td><td width="25%"></td><td width="25%"><button type = "submit" name="cmdsubmit" value="">Registar</button><button type = "reset" name="cmdreset" value="">Limpar Dados</button></td>
+				    <td width="50%"><span class="error"><?php echo $MsgErro;?></span></td><td width="25%"></td><td width="25%"><button type = "submit" name="cmdsubmit" value="">Registar</button><button type = "reset" name="cmdreset" value="">Limpar Dados</button></td>
 				  </tr>
 							  
 				</table>
 			</form>
+
+			<?php
+				if (empty($MsgErro)) {
+					
+				} 
+			?>
 			
 		</div>
 
