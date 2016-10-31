@@ -10,8 +10,7 @@
 		$decisao = $_POST['cmdsubmit'];
 
 		if ($decisao=='registar') {
-			include ('../signup.php');
-			exit;
+			exit(header("Location: ../signup.php"));
 		}
 
 		//----------------------------------
