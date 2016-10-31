@@ -38,17 +38,18 @@ footer {
 
 }
 
-header a:link, header a:visited {
+
+header button[type=submit] {
     background-color: #D3D1CF;
     color: white;
     padding: 4px 8px;
     text-align: center; 
     text-decoration: none;
-	display: block;
+    display: block;
     margin: 2px 2px 0 2px;
 }
 
-header a:hover, header a:active {
+header button[type=submit]:hover, header button[type=submit]:active {
     background-color: #B2B0AF;
 }
 
