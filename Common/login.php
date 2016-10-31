@@ -3,18 +3,41 @@
 
 
 	<?php
+		
+
+		// Ver se e um registo novo e se sim correr o codigo de registo
+
+		$decisao = $_POST['cmdsubmit'];
+
+		if ($decisao=='registar') {
+			include ('signup.php');
+			exit;
+		}
+
+		//----------------------------------
+
+
+
+		include 'encrypt.php';
 		include '../DBAccess/user.php';
 
 		$nome = $_POST['caixauser'];
-		$password = $_POST['caixapassword'];
+		$password = encrypt($_POST['caixapassword']);  // encripta a password vinda do form
 
 		$passworddb = getpassword($nome);
 
+
 		if ($password == $passworddb) {
-			echo "Login feito com sucesso";
-		} else {
-			echo "Login falhado";
+			//Login feito com sucesso
+			session_start();
+			$_SESSION['username'] = $nome;
+			exit(header("Location: ../store.php"));
+		} 
+		else {
+			//Login falhado
+			header("Location: ../index.php");
 		}
+
 
 	?>
 

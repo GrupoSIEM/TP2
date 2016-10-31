@@ -23,17 +23,25 @@
 								<div class="coluna" id="loginheader2">
 									
 									<div class="linha">
-										<input type = "text" id = "utilizadorInput" name = "caixauser" value=""></input>
+										<input type = "text" 
+												id = "utilizadorInput" 
+												name = "caixauser" 
+												value=""></input>
 									</div>
+
 									<div class="linha">
 										<input type = "password"
-										name = "caixapassword"
-							      id = "passwordInput"
-							      value="" />
+												name = "caixapassword"
+									      		id = "passwordInput"
+									      		value="" />
 									</div>
+									
 									<button type = "submit" class="botoesentrada" name="cmdsubmit" value="login">Entrar</button>
+
 									<button type = "submit" class="botoesentrada" name="cmdsubmit" value="registar">Registar</button>
-								</div>      
+								
+								</div>    
+
 								
 								<div class="coluna" id="loginheader1">
 									
@@ -60,16 +68,6 @@
 			</div>
 			
 			
-
-			<?php
-				$query = "select * from cidade_v2;";
-				$conn = pg_connect("host=db.fe.up.pt dbname=jfaria user=jfaria password=jfaria");
-				if (!$conn) {
-					print "ERRO: Nao foi possivel estabelecer ligacao à base de dados";
-					exit;
-					}
-				$result = pg_exec($conn, $query);
-			?>
 
 		</header>
 

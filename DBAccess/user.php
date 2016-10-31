@@ -1,6 +1,7 @@
 <?php
 
 	
+
 	function searchbyname($nome) {
 		include '../Common/connectdb.php';
 
@@ -35,6 +36,8 @@
 		return $pass;
 
 	}
+
+	
 
 
 
