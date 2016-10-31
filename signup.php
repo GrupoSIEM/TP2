@@ -3,7 +3,60 @@
 	
 	<head>
 		<title>RG Peças</title>
+		<style>
+			table {
+				border: 1px solid #dddddd;
+			    font-family: arial, sans-serif;
+			    border-collapse: collapse;
+			    width: 100%;
+			}
+			table h4 {
+				margin: 10px 0 0 0;
+			}
 
+			th {
+			    border: 1px solid #dddddd;
+			    text-align: left;
+			    padding: 8px 8px 8px 1%;
+			    background-color: #D47404;
+
+			}
+			td {
+				/*border: 1px solid #dddddd;*/
+			    text-align: left;
+			    padding: 8px 8px 8px 2%;
+			}
+
+			#temcaixa {
+				padding: 0px 8px 8px 2%;
+			}
+
+			#caixareg{
+				height: 20px;
+				width: 90%;
+			}
+
+			#caixaregemail {
+				height: 20px;
+				width: 95%;
+			}
+
+			button {
+			    background-color: #B3ACA6;
+			    color: white;
+			    padding: 4px 8px;
+			    text-align: center; 
+			    text-decoration: none;
+			    display: block;
+			    margin: 2% 9% 0 2px;
+			    float: right;
+			}
+
+			button:hover, button:active {
+			    background-color: #444549;
+			}
+
+		</style>
 	</head>
 
 	<body>
@@ -22,92 +75,76 @@
 		
 		<div class="container">
 			<H3>Criar uma conta:</H3>
-			<br/>
-
-			<table>
-			  <tr>
-			    <th>Company</th>
-			  </tr>
-			  <tr>
-			    <form method="POST" action="registar.php">
-
-				
-				<!-- -----------------------  Text Field ------------------------------------------------------------------ -->
-					<b>Exemplo de Text Field</b><br>
-					Nome: <input type = "text" name="seunome" value="escreva aqui o seu nome" size = 30></input>
-					<br/><br/>
-
-
-				<!-- -----------------------  Password Field ------------------------------------------------------------------ -->
-					<b>Exemplo de Password Field</b><br/>
-					Password: <input type = "password" name="pass" size = 10></input>
-					<br/><br/>
-
-					
-				<!-- -----------------------  Check Box------------------------------------------------------------- 
-					a variável opcao1 toma o valor T1 se o utilizador seleccionar a opção Torno 1, e toma o valor nulo no caso contrário 
-					a variável opcao2 toma o valor F2 se o utilizador seleccionar a opção Freza 2, e toma o valor nulo no caso contrário 
-					a variável opcao3 toma o valor J1 se o utilizador seleccionar a opção Jito 1, e toma o valor nulo no caso contrário 
-				-->
-					<b>Exemplo de Check Box</b><br>
-					<input type="checkbox" name="opcao1" value="T1"> Torno1<br>
-					<input type="checkbox" name="opcao2" value="F2" checked> Freza 2<br>
-					<input type="checkbox" name="opcao3" value="J1"> Jito 1<br>
-					<br/>
-
-					
-				<!-- -----------------------  Radio Buttons ------------------------------------------------------------- 
-				a variável grupo1 toma o valor:
-				- T1 se o utilizador seleccionar a opção Torno 1
-				- F2 se o utilizador seleccionar a opção Freza 2
-				- J1 se o utilizador seleccionar a opção Jito 1
-				-->
-					<b>Exemplo de Radio Buttons </b><br>
-					<input type="radio" name="grupo1" value="T1">Torno 1<br>
-					<input type="radio" name="grupo1" value="F2" checked> Freza 2<br>
-					<input type="radio" name="grupo1" value="J1"> Jito 1<br>
-					<br/>
-
-					
-				<!-- -----------------------  Menu Drop Down ------------------------------------------------------------- 
-				a variável Maquina toma o valor:
-				- T1 se o utilizador seleccionar a opção Torno 1
-				- F2 se o utilizador seleccionar a opção Freza 2
-				- J1 se o utilizador seleccionar a opção Jito 1
-				-->
-					<b>Exemplo de Menu Drop Down</b><br>
-					Maquina: 
-					<Select name="maquina">
-						<Option value=T1>Torno 1</Option><br/>
-						<Option value=F2>Freza 2</Option><br/>
-						<Option value=J1>Jito 1</Option><br/>
-					</Select>
-					<br/><br/>
-
-
-				<!-- -----------------------  Botao Reset ------------------------------------------------------------- -->
-					<b>Exemplo de Botao Reset</b><br>
-					Clique aqui para limpar valores <input type = "reset" name="cmdreset" value="Limpar"></input>
-					<br/><br/>
-
-
-				<!-- -----------------------  Botao Submit ------------------------------------------------------------- -->
-					<b>Exemplo de Botao Submit</b><br>
-					ou aqui para confirmar a submissão <input type = "submit" name="cmdsubmit" value="OK"></input>
-
-				</form>
-			  </tr>
-			  
-			</table>
-
+			<form method="POST" action="Common/registo.php">
+				<table>
+				  <tr>
+				    <th colspan="3">Registo</th>
+				  </tr>
+				  <tr>
+				    <td width="50%"></td><td width="25%"></td><td width="25%"></td>
+				  </tr>
+				  <tr>
+				    <td width="50%">Nome:*</td><td width="50%" colspan="2">Email:*</td>
+				  </tr>
+				  <tr>
+				    <td width="50%" id="temcaixa">
+				    	<input type = "text" id="caixareg" name = "reguser" value=""></input>
+				    </td>
+				    <td width="50%" id="temcaixa" colspan="2">
+				    	<input type = "text" id="caixaregemail" name = "regemail" value=""></input>
+				    </td>
+				  </tr>
+				  <tr>
+				    <td width="50%">Telemóvel:*</td><td width="25%">Palavra-Chave:*</td><td width="25%">Confirmar Palavra-Chave:*</td>
+				  </tr>
+				  <tr>
+				    <td width="50%" id="temcaixa">
+				    	<input type = "text" id="caixareg" name = "regtelemovel" value=""></input>
+				    </td><td width="25%" id="temcaixa"><input type = "password" id="caixareg" name = "regpassword1" value=""></input></td><td width="25%" id="temcaixa"><input type = "password" id="caixareg" name = "regpassword2" value=""></input></td>
+				  </tr>
+				  <tr>
+				    <td width="50%"><h4>Morada:</h4></td><td width="25%"></td><td width="25%"></td>
+				  </tr>
+				  <tr>
+				    <td width="50%">Endereço:</td><td width="25%">Código Postal:</td><td width="25%">Cidade:</td>
+				  </tr>
+				  <tr>
+				    <td width="50%" id="temcaixa">
+				    	<input type = "text" id="caixareg" name = "regendereco1" value=""></input>
+				    </td>
+				    <td width="25%" id="temcaixa">
+				    	<input type = "password" id="caixareg" name = "regcodpostal" value=""></input>
+				    </td>
+				    <td width="25%" id="temcaixa">
+				    	<input type = "password" id="caixareg" name = "regcidade" value=""></input>
+				    </td>
+				  </tr>
+				  <tr>
+				    <td width="50%"></td><td width="25%">Região:</td><td width="25%">País:</td>
+				  </tr>
+				  <tr>
+				    <td width="50%" id="temcaixa">
+				    	<input type = "text" id="caixareg" name = "regendereco2" value=""></input>
+				    </td>
+				    <td width="25%" id="temcaixa">
+				    	<input type = "password" id="caixareg" name = "regregiao" value=""></input>
+				    </td>
+				    <td width="25%" id="temcaixa">
+				    	<input type = "password" id="caixareg" name = "regpais" value=""></input>
+				    </td>
+				  </tr>
+				  <tr>
+				    <td width="50%"></td><td width="25%"></td><td width="25%"><button type = "submit" name="cmdsubmit" value="">Registar</button><button type = "reset" name="cmdreset" value="">Limpar Dados</button></td>
+				  </tr>
+							  
+				</table>
+			</form>
 			
 		</div>
 
 		<?php include 'Resources/footer.php';?> <!-- Inclusão do footer -->
 
 	</body>
-
-
 
 
 </html>
