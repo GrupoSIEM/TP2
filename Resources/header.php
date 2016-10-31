@@ -12,11 +12,7 @@
 		<header>
 			<div class="container">
 
-<<<<<<< HEAD
       		<a href="../TP2/index.php"><img src="../TP2/Resources/headerLogo.png" class="headerLogo coluna"/></a>
-=======
-      		<img src="Resources/headerLogo.png" class="headerLogo coluna"/>
->>>>>>> origin/master
 					
 
 					<form method="POST" action="Common/login.php">
