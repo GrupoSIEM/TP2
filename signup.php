@@ -95,7 +95,7 @@
 				    $pass2 = test_input($_POST["regpassword2"]);
 				  }
 
-				  if()
+				  // if() {}
 
 
 				} while(0);
