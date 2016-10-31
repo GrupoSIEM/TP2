@@ -12,7 +12,7 @@
 		<header>
 			<div class="container">
 
-      		<img src="../Resources/headerLogo.png" class="headerLogo coluna"/>
+      		<img src="Resources/headerLogo.png" class="headerLogo coluna"/>
 					
 
 					<form method="POST" action="Common/login.php">
