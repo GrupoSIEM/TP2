@@ -7,10 +7,14 @@
 
 
 		$result = pg_exec($conn, $query);
+		if (!$result) {
+		  echo "An error occurred.\n";
+		  exit;
+		}
 
-		$row = pg_fetch_row($result, 0); //obter a primeira linha [0]
+		$row = pg_fetch_array($result); //obter a primeira linha [0]
 		
-		if(isset($row[0])) {
+		if($row!=null) {
 			$res = true;
 		} else {
 			$res = false;
@@ -30,10 +34,14 @@
 
 
 		$result = pg_exec($conn, $query);
+		if (!$result) {
+		  echo "An error occurred.\n";
+		  exit;
+		}
 
-		$row = pg_fetch_row($result, 0); //obter a primeira linha [0]
+		$row = pg_fetch_array($result, 0); //obter a primeira linha [0]
 		
-		if(isset($row[3])) {
+		if($row!=null) {
 			$name = $row[3];
 		} else {
 			$name = null;
@@ -54,8 +62,12 @@
 
 
 		$result = pg_exec($conn, $query);
+		if (!$result) {
+		  echo "An error occurred.\n";
+		  exit;
+		}
 
-		$row = pg_fetch_row($result, 0); //obter a primeira linha [0]
+		$row = pg_fetch_array($result, 0); //obter a primeira linha [0]
 		$pass = $row[0];
 
 		pg_close($conn);
@@ -66,17 +78,23 @@
 
 	function insertuser($username, $nome, $email, $telemovel, $pass) {
 		include '../TP2/Common/connectdb.php';
+		include '../TP2/Common/encrypt.php';
 
 		// $query1 = "select max(id) from utilizador;";
 		// $result1 = pg_exec($conn, $query1);
 		// $row = pg_fetch_row($result, 0); //obter a primeira linha [0]
 		// $id = $row[0] + 1;
-		$id=2;
+		$id=4;
 
-		$query2 = "insert into utilizador (id,nome,telefone,nomeusuario, password) values (".$id.",".$nome.",".$telemovel.",".$username.",".$pass.");";
+		$password = encrypt($pass);
+		$query2 = "INSERT INTO utilizador (id,nome,telefone,nomeusuario, password) VALUES (".$id.",'".$nome."',".$telemovel.",'".$username."','".$password."');";
 
 
 		$result2 = pg_exec($conn, $query2);
+		if (!$result2) {
+		  echo "An error occurred.\n";
+		  exit;
+		}
 
 		pg_close($conn);
 

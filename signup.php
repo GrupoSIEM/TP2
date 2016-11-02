@@ -107,6 +107,7 @@
 				  	$MsgErro = "Utilizador já existe";
 				    break;
 				  } else {
+				  	
 				  	$res2 = insertuser($username, $nome, $email, $telemovel, $pass1);
 				  }
 
