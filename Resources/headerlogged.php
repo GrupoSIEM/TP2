@@ -7,6 +7,8 @@
 
 	<body>
 		<header>
+
+			<?php session_start(); ?>
 			
 			<div class="container">
 
@@ -48,14 +50,21 @@
 
 									<div class="dropdown">
 
-									
+								
 									<button class="dropbtn" id="asd">  <!VERIFICAR ISTO E ADICIONAR A SOMA DO PREÇO>
 
-									<?php include ('../DBAccess/cart.php')      
+									<?php 
 
-										$contagemArtigos= getarticlesnumber($_SESSION['username']);
+										include ('../DBAccess/cart.php') ;
+										
+										
+										$contagemArtigos = getarticlesnumber($_SESSION['username']);
+										$preçototal = preçototal($_SESSION['username']);
+										 
 
-										echo $contagemArtigos;
+										echo "Artigos: ".$contagemArtigos. "";
+										echo "    | Total: ".$preçototal. "€";
+										
 
 										?>
 									</button>
@@ -79,7 +88,16 @@
 									<div class="dropdown">
 
 									
-									<button class="dropbtn" >Utilizador</button>
+									<button class="dropbtn" >
+
+									<?php 
+
+										
+										echo $_SESSION['username'];
+
+									?>
+										
+									</button>
 
 									<div class="dropdown-content">
 										<a href="#">Perfil</a>
