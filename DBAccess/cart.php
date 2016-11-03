@@ -29,7 +29,7 @@ function preçototal($username){
 
 	$i=0;
 
-	while (!is_null(pg_fetch_row($tabelaids, $i))){
+	while (!pg_fetch_row($tabelaids, $i)==NULL){
 
 		$linha = pg_fetch_row($tabelaids, $i);
 
@@ -40,6 +40,8 @@ function preçototal($username){
 		$i=$i+1;
 
 	}
+
+
 
 	$query = " SELECT SUM(preço) FROM peças WHERE id IN (1, 2 )";
 
