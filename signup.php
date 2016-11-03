@@ -101,18 +101,20 @@
 				    break;
 				  }
 
+				  //Fazer verificação de email e do numero
+
 				  $res = userexists($nome);
 
 				  if($res) {
 				  	$MsgErro = "Utilizador já existe";
 				    break;
 				  } else {
-				  	
+
 				  	$res2 = insertuser($username, $nome, $email, $telemovel, $pass1);
 				  }
 
 				  if ($res2) {
-						header("www.google.com");
+						exit(header("Location: index.php"));
 				  } else {
 						$MsgErro = "Erro ao registar utilizador";
 				  }
