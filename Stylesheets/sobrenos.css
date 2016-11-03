@@ -1,6 +1,5 @@
 #sobrenos {
     padding: 5% 20%;
-    background: red;
     display: block;
 
 }
@@ -8,7 +7,6 @@
 #colunagrifo{
 
 	width: 50%;
-	background: blue;
 	display: inline-block;
 
 }
@@ -17,7 +15,6 @@
 #colunaquintao{
 
 	width: 50%;
-	background:purple;
 	display: inline-block;
 
 }
@@ -30,6 +27,7 @@
     width: auto;
 
 
+
 }
 
 #quintaopic{
@@ -38,6 +36,16 @@
     margin: 0 auto;
     height: 400px;
     width: auto;
+
+
+}
+
+.aboutusbutton{
+
+	background-color: #B3ACA6;
+    color: white;
+    text-align: center; 
+    text-decoration: none;
 
 
 }

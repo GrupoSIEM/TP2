@@ -13,7 +13,7 @@
 		<footer>
 			<div class="container">
 				<a href="">Contactos</a>
-				<a href="">Sobre nós</a>
+				<a href="sobrenos.php">Sobre nós</a>
 			</div>
 		</footer>
 	</body>
