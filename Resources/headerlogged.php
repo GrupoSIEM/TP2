@@ -39,7 +39,6 @@
 		      		<div class="coluna" id="colunaok">
 
 		      			<button type="submit"> ok </button>
-		      			<button type = "submit" name="cmdsubmit" value="">Registar</button>
 
 
 		      		</div>
