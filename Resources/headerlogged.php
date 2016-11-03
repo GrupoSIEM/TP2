@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>RG header</title>
-		<link rel="stylesheet" type="text/css" href="../Stylesheets/headerfooter.css">
+		<link rel="stylesheet" type="text/css" href="Stylesheets/headerfooter.css">
 	</head>
 
 	<body>
@@ -13,7 +13,7 @@
 
 			
 
-      		<a href="../TP2/pinicial.php"><img src="../TP2/Resources/headerLogo.png" class="headerLogo coluna"/></a>
+      		<a href="../pinicial.php"><img src="Resources/headerLogo.png" class="headerLogo coluna"/></a>
 
       			
 
@@ -54,7 +54,7 @@
 
 									<?php 
 
-										include ('../TP2/DBAccess/cart.php') ;
+										include ('DBAccess/cart.php') ;
 										
 										
 										$contagemArtigos = getarticlesnumber($_SESSION['username']);
@@ -62,7 +62,7 @@
 										 
 
 										echo "Artigos: ".$contagemArtigos. "";
-										echo "    | Total: ".$preçototal. "€";
+										echo nl2br ("\n Total: ".$preçototal. "€");
 										
 
 										?>

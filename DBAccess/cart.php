@@ -3,7 +3,7 @@
 
 function getarticlesnumber($username){
 
-		include '../TP2/Common/connectdb.php';
+		include 'Common/connectdb.php';
 
 		$query = "SELECT count(idpeca) 
 				from carrinho 
@@ -24,7 +24,7 @@ function getarticlesnumber($username){
 function preçototal($username){
 
 	
-	include '../TP2/Common/connectdb.php';
+	include 'Common/connectdb.php';
 
 	$query = "SELECT sum(preço)
 			FROM carrinho
