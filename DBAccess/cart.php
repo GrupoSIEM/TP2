@@ -45,7 +45,20 @@ function preçototal($username){
 
 }
 
+function getitemscart($username){
 
+	include '../TP2/Common/connectdb.php';
+
+	$query = "SELECT * FROM carrinho
+			 INNER JOIN peças 
+			 ON carrinho.idpeca=peças.id
+			 where carrinho.nome='$username';";
+
+	$result = pg_exec($conn, $query);
+
+
+	return $result;
+}
 
 
 ?>

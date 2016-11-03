@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-	
-	<head>
-		<title>RG Peças</title>
-		<link rel="stylesheet" type="text/css" href="Stylesheets/tabelas.css">
-		<style>
+<head>
+	<title>PG Pecas</title>
+
+	<link rel="stylesheet" type="text/css" href="Stylesheets/tabelas.css">
+
+	<style>
 			
 			.imagens {
 				height: 100px;
@@ -20,9 +21,11 @@
 			}
 
 		</style>
-	</head>
 
-	<body>
+
+</head>
+<body>
+
 		<?php include 'Common/sessioncheck.php';?>
 		<?php include 'Resources/headerlogged.php';?> <!-- Inclusão do header -->
 		<?php include 'Common/connectdb.php';?> <!-- Conexão à base de dados -->
@@ -30,18 +33,18 @@
 		<?php include 'DBAccess/pecas.php';?> <!-- Biblioteca com funçoes que acedem à tabela peças na BD -->
 
 		<div class="container">
-			<p>Resultados encontrados para a pesquisa: <?php echo $_POST['caixapesquisa']; ?></p>
+			<p>Os artigos do seu carrinho são: </p>
 
 			<table class="tabelapesquisa">
 				  <tr>
-				    <th width="20%">Imagem</th><th width="20%">Nome</th><th width="20%">Marca</th><th width="20%">Preço</th><th width="20%">Adicionar ao carrinho</th>
+				    <th width="20%">Imagem</th><th width="20%">Nome</th><th width="20%">Marca</th><th width="20%">Preço</th><th width="20%">Tirar do carrinho</th>
 				  </tr>
 					
-				  <?php $res=verpeças($_POST['caixapesquisa']);
+				  <?php $res=getitemscart($_SESSION['username']);
 
 				  	while ($row = pg_fetch_assoc($res))
 					{ 
-					    echo '<tr><td width="20%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="20%">'.$row["nome"].'</td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td><td width="20%"><img src="../TP2/Resources/cart.png" class="carrinho" /></td></tr>';
+					    echo '<tr><td width="20%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="20%">'.$row["nome"].'</td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td><td width="20%"><img src="../TP2/Resources/X.png" class="carrinho" /></td></tr>';
 
 					} 
 					
@@ -54,12 +57,7 @@
 
 		</div>
 
-
-
-
 		<?php include 'Resources/footer.php';?> <!-- Inclusão do footer -->
 
-	</body>
-
-
+</body>
 </html>

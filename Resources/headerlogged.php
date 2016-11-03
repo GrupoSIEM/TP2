@@ -70,7 +70,7 @@
 
 									<div class="dropdown-content">
 										<a href="#">Pagamento</a>
-										<a href="#">Ver Artigos</a>
+										<a href="vercarrinho.php">Ver Artigos</a>
 									</div>
 								
 
