@@ -1,0 +1,43 @@
+#sobrenos {
+    padding: 5% 20%;
+    background: red;
+    display: block;
+
+}
+
+#colunagrifo{
+
+	width: 50%;
+	background: blue;
+	display: inline-block;
+
+}
+
+
+#colunaquintao{
+
+	width: 50%;
+	background:purple;
+	display: inline-block;
+
+}
+
+#grifopic{
+
+	display: block;
+    margin: 0 auto;
+    height: 400px;
+    width: auto;
+
+
+}
+
+#quintaopic{
+
+	display: block;
+    margin: 0 auto;
+    height: 400px;
+    width: auto;
+
+
+}
