@@ -3,9 +3,11 @@
 
 function getarticlesnumber($username){
 
-		include '../Common/connectdb.php';
+		include '../TP2/Common/connectdb.php';
 
-		$query = "Select count(idpeca) from carrinho where utilizador = '$username';";
+		$query = "SELECT count(idpeca) 
+				from carrinho 
+				where nome = '$username';";
 
 		$result = pg_exec($conn, $query);
 
@@ -22,53 +24,27 @@ function getarticlesnumber($username){
 function preçototal($username){
 
 	
-	include '../Common/connectdb.php';
+	include '../TP2/Common/connectdb.php';
 
-
-	$tabelaids = getids($username);
-
-	$i=0;
-
-	while (!pg_fetch_row($tabelaids, $i)==NULL){
-
-		$linha = pg_fetch_row($tabelaids, $i);
-
-		$idpeça = $linha[0];
-
-		echo $idpeça;
-
-		$i=$i+1;
-
-	}
-
-
-
-	$query = " SELECT SUM(preço) FROM peças WHERE id IN (1, 2 )";
+	$query = "SELECT sum(preço)
+			FROM carrinho
+			INNER JOIN peças
+			ON carrinho.idpeca=peças.id
+			where carrinho.nome='$username';";
 
 	$result = pg_exec($conn, $query);
 
 	$row = pg_fetch_row($result, 0); //obter a primeira linha [0]
 
-	$preçototal = $row[0];
+	$preço = $row[0];
 
 	pg_close($conn);
 
-	return $preçototal;
-
-}
-
-function getids($username){
-
-	include '../Common/connectdb.php';
-
-	$query = "Select idpeca from carrinho where utilizador = '$username';";
-
-	$result = pg_exec($conn, $query);
-
-	return $result;
+	return $preço;
 
 
 }
+
 
 
 

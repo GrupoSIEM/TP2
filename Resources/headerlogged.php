@@ -8,13 +8,12 @@
 	<body>
 		<header>
 
-			<?php session_start(); ?>
 			
 			<div class="container">
 
 			
 
-      		<a href="../index.php"><img src="../Resources/headerLogo.png" class="headerLogo coluna"/></a>
+      		<a href="../TP2/pinicial.php"><img src="../TP2/Resources/headerLogo.png" class="headerLogo coluna"/></a>
 
       			
 
@@ -55,7 +54,7 @@
 
 									<?php 
 
-										include ('../DBAccess/cart.php') ;
+										include ('../TP2/DBAccess/cart.php') ;
 										
 										
 										$contagemArtigos = getarticlesnumber($_SESSION['username']);
