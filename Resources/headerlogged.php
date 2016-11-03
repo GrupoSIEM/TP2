@@ -101,7 +101,7 @@
 									<div class="dropdown-content">
 										<a href="#">Perfil</a>
 										<a href="#">Encomendas</a>
-										<a href="#">Sair</a>
+										<a href="Common/logout.php">Sair</a>
 									</div>
 								
 
