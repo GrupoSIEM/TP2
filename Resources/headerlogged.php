@@ -13,7 +13,7 @@
 
 			
 
-      		<a href="../pinicial.php"><img src="Resources/headerLogo.png" class="headerLogo coluna"/></a>
+      		<a href="../TP2/pinicial.php"><img src="Resources/headerLogo.png" class="headerLogo coluna"/></a>
 
       			
 
