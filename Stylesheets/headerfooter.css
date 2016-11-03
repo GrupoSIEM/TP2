@@ -194,7 +194,8 @@ footer a:hover, footer a:active {
 
 .dropdown {
 
-    margin: 2% 80%;
+    margin: 2% 5%;
+    width: 10%;
     display: inline-block;
     color: red;
 
@@ -230,15 +231,14 @@ footer a:hover, footer a:active {
 
     float: right;
 
-
 }
 
 #carrinho {
 
     float: right;
     margin-top: 1px;
-    margin-left: 10%;
-    margin-right: 125px;
+    margin-left: 5%;
+    margin-right: 5%;
 
 
 }
