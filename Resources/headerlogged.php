@@ -17,32 +17,33 @@
 
       			
 
+				<form method="POST" action="pesquisa.php"> 
+
+	      			<div class="coluna" id="caixapesquisacss">
+	      				
+					      		
+
+							      		<input class="text"      
+									      		id = "pesquisainput" 
+												name = "caixapesquisa" 
+												value="Pesquisa">
+							      		
+
+							      		
 
 
-      			<div class="coluna" id="caixapesquisacss">
-      				
-				      		<form method="POST" action="Common/login.php"> 
+					      		
+					      	
+		      		</div>
 
-						      		<input class="text"      
-								      		id = "pesquisainput" 
-											name = "caixapesquisa" 
-											value="Pesquisa">
-						      		
+		      		<div class="coluna" id="colunaok">
 
-						      		
+		      			<button type="submit"> ok </button>
+		      			<button type = "submit" name="cmdsubmit" value="">Registar</button>
 
 
-				      		</form>
-				      	
-	      		</div>
-
-	      		<div class="coluna" id="colunaok">
-
-	      			<button type="submit"> ok </button>
-
-
-	      		</div>
-
+		      		</div>
+				</form>
 
 	      		<div class="coluna" id="carrinho">
 
@@ -50,7 +51,7 @@
 									<div class="dropdown">
 
 								
-									<button class="dropbtn" id="asd">  <!VERIFICAR ISTO E ADICIONAR A SOMA DO PREÇO>
+									<button class="dropbtn" id="asd">
 
 									<?php 
 
