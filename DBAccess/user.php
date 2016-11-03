@@ -80,14 +80,13 @@
 		include '../TP2/Common/connectdb.php';
 		include '../TP2/Common/encrypt.php';
 
-		// $query1 = "select max(id) from utilizador;";
-		// $result1 = pg_exec($conn, $query1);
-		// $row = pg_fetch_row($result, 0); //obter a primeira linha [0]
-		// $id = $row[0] + 1;
-		$id=4;
+		$query1 = "select max(id) from utilizador;";
+		$result1 = pg_exec($conn, $query1);
+		$row = pg_fetch_array($result1, 0); //obter a primeira linha [0]
+		$id = $row[0] + 1;
 
 		$password = encrypt($pass);
-		$query2 = "INSERT INTO utilizador (id,nome,telefone,nomeusuario, password) VALUES (".$id.",'".$nome."',".$telemovel.",'".$username."','".$password."');";
+		$query2 = "INSERT INTO utilizador (id,nome,telefone,nomeusuario, password) VALUES (".$id.",'".$username."',".$telemovel.",'".$nome."','".$password."');";
 
 
 		$result2 = pg_exec($conn, $query2);
