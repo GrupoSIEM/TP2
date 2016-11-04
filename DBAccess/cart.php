@@ -60,5 +60,13 @@ function getitemscart($username){
 	return $result;
 }
 
+function erasefromcart(){
+
+	echo "ola";
+
+
+
+}
+
 
 ?>
