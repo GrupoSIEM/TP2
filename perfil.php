@@ -26,81 +26,49 @@
 
 		<div class="container">
 			<H3>Perfil</H3>
-			
+			<form method="POST" action="alterardados.php">
 				<table>
 				  <tr>
-				    <th colspan="4">Dados</th>
+				    <th colspan="2">Dados</th>
 				  </tr>
 				  <tr>
-				    <td width="50%" colspan="2"></td><td width="25%"></td><td width="25%"></td>
+				    <td width="50%"></td><td width="50%"></td>
 				  </tr>
 				  <tr>
-				    <td width="50%" colspan="2">Nome:</td><td width="50%" colspan="2">Email:</td>
+				    <td width="50%">Nome:</td><td width="50%">Email:</td>
 				  </tr>
 				  <tr>
-				    <td width="50%" colspan="2">
+				    <td width="50%" id="temdados">
 				    	<?php echo getnomeusuario($nom); ?>
 				    </td>
-				    <td width="50%" colspan="2">
+				    <td width="50%" id="temdados">
 				    	<?php echo getemail($nom); ?>
 				    </td>
 				  </tr>
 				  <tr>
-				    <td width="25%">Username:</td>
-				    <td width="25%">Telemóvel:</td>
-				    <td width="25%">Palavra-Chave:</td>
-				    <td width="25%">Confirmar Palavra-Chave:</td>
+				    <td width="50%">Username:</td>
+				    <td width="50%">Telemóvel:</td>
 				  </tr>
 				  <tr>
-				  	<td width="25%" id="temcaixa">
+				  	<td width="50%" id="temdados">
 				  		<?php echo $nom; ?>
 				  	</td>
-				    <td width="25%" id="temcaixa">
+				    <td width="50%" id="temdados">
 				    	<?php echo gettelemovel($nom); ?>
 				    </td>
-				    <td width="25%" id="temcaixa">
-				    	<input type = "password" id="caixareg" name = "regpassword1" value=""></input>
-				    </td>
-				    <td width="25%" id="temcaixa">
-				    	<input type = "password" id="caixareg" name = "regpassword2" value=""></input>
-				    </td>
 				  </tr>
 				  <tr>
-				    <td width="50%"  colspan="2"><h4>Morada:</h4></td><td width="25%"></td><td width="25%"></td>
+				    <td width="100%" colspan="2"><h4>Morada:</h4></td>
 				  </tr>
 				  <tr>
-				    <td width="50%"  colspan="2">Endereço:</td><td width="25%">Código Postal:</td><td width="25%">Cidade:</td>
+				    <td width="100%" colspan="2" id="temdados"><?php echo nl2br (getadress($nom)); ?></td>
 				  </tr>
 				  <tr>
-				    <td width="50%" id="temcaixa"  colspan="2">
-				    	<input type = "text" id="caixaregmaior" name = "regendereco1" value=""></input>
-				    </td>
-				    <td width="25%" id="temcaixa">
-				    	<input type = "password" id="caixareg" name = "regcodpostal" value=""></input>
-				    </td>
-				    <td width="25%" id="temcaixa">
-				    	<input type = "password" id="caixareg" name = "regcidade" value=""></input>
-				    </td>
-				  </tr>
-				  <tr>
-				    <td width="50%"  colspan="2"></td><td width="25%">Região:</td><td width="25%">País:</td>
-				  </tr>
-				  <tr>
-				    <td width="50%" id="temcaixa"  colspan="2">
-				    	<input type = "text" id="caixaregmaior" name = "regendereco2" value=""></input>
-				    </td>
-				    <td width="25%" id="temcaixa">
-				    	<input type = "password" id="caixareg" name = "regregiao" value=""></input>
-				    </td>
-				    <td width="25%" id="temcaixa">
-				    	<input type = "password" id="caixareg" name = "regpais" value=""></input>
-				    </td>
-				  </tr>
-				  <tr>
-				    <td width="50%"  colspan="2"><span class="error"></span></td><td width="25%"></td><td width="25%"><button type = "submit" name="cmdsubmit" value="">Registar</button><button type = "reset" name="cmdreset" value="">Limpar Dados</button></td>
+				    <td width="100%" colspan="2"><button type = "submit" name="cmdsubmit" value="">Alterar dados</button></td>
 				  </tr>
 							  
 				</table>
+			</form>
 			
 
 			

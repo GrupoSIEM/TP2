@@ -11,16 +11,21 @@
 
 			session_start();
 
-			if (isset($_SESSION['username']) || !empty($_SESSION['username'])) {
-			      
-			      exit(header("Location: pinicial.php"));
-			}
-
 		?>
-		<?php include 'Resources/header.php';?> <!-- Inclusão do header -->
+		<?php include 'Resources/headerlogged.php';?> <!-- Inclusão do header -->
 		<?php include 'Common/connectdb.php';?> <!-- Conexão à base de dados -->
 		<?php include 'DBAccess/user.php';?> <!-- Biblioteca com funçoes que acedem à tabela user na BD -->
-
+		<?php $nom=$_SESSION['username'];
+			$aux=false;
+			$pieces = explode(",", getadress($nom));
+			$end1=$pieces[0];
+			$end2=$pieces[1];
+			$zip=explode(" ", $pieces[2]);
+			$zipcode = $zip[0];
+			$cidade = $zip[1];
+			$reg=$pieces[3];
+			$pais=$pieces[4];
+		?>
 		<?php
 			// define variables and set to empty values
 			$MsgErro = "";
@@ -56,23 +61,14 @@
 				      break;
 				  }
 
+				  	$res2 = updateuser($nom, $username, $nome, $email, $telemovel, $pass1, $morada);
 				  
 
-				  $res = userexists($nome);
-
-				  if($res) {
-				  	$MsgErro = "Utilizador já existe";
-				    break;
-				  } else {
-
-				  	$res2 = insertuser($username, $nome, $email, $telemovel, $pass1, $morada);
-				  }
-
 				  if ($res2) {
-				  	$MsgErro = "Utilizador registado com sucesso";
-						// exit(header("Location: index.php"));
+				  	$MsgErro = "Dados alterados com sucesso";
+					exit(header("Location: alterardados.php"));
 				  } else {
-						$MsgErro = "Erro ao registar utilizador";
+						$MsgErro = "Erro!";
 				  }
 
 
@@ -90,11 +86,11 @@
 
 
 		<div class="container">
-			<H3>Criar uma conta:</H3>
+			<H3>Alterar dados:</H3>
 			<form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
 				<table>
 				  <tr>
-				    <th colspan="4">Registo</th>
+				    <th colspan="4">Perfil</th>
 				  </tr>
 				  <tr>
 				    <td width="50%" colspan="2"></td><td width="25%"></td><td width="25%"></td>
@@ -104,10 +100,10 @@
 				  </tr>
 				  <tr>
 				    <td width="50%" id="temcaixa" colspan="2">
-				    	<input type = "text" id="caixaregmaior" name = "reguser" value=""></input>
+				    	<input type = "text" id="caixaregmaior" name = "reguser" value=<?php echo getnomeusuario($nom); ?>></input>
 				    </td>
 				    <td width="50%" id="temcaixa" colspan="2">
-				    	<input type = "text" id="caixaregmaior" name = "regemail" value=""></input>
+				    	<input type = "text" id="caixaregmaior" name = "regemail" value=<?php echo getemail($nom); ?>></input>
 				    </td>
 				  </tr>
 				  <tr>
@@ -118,10 +114,10 @@
 				  </tr>
 				  <tr>
 				  	<td width="25%" id="temcaixa">
-				  		<input type = "text" id="caixareg" name = "regusername" value=""></input>
+				  		<input type = "text" id="caixareg" name = "regusername" value=<?php echo $nom; ?>></input>
 				  	</td>
 				    <td width="25%" id="temcaixa">
-				    	<input type = "text" id="caixareg" name = "regtelemovel" value=""></input>
+				    	<input type = "text" id="caixareg" name = "regtelemovel" value=<?php echo gettelemovel($nom); ?>></input>
 				    </td>
 				    <td width="25%" id="temcaixa">
 				    	<input type = "password" id="caixareg" name = "regpassword1" value=""></input>
@@ -138,13 +134,13 @@
 				  </tr>
 				  <tr>
 				    <td width="50%" id="temcaixa"  colspan="2">
-				    	<input type = "text" id="caixaregmaior" name = "regendereco1" value=""></input>
+				    	<input type = "text" id="caixaregmaior" name = "regendereco1" value=<?php echo $end1; ?>></input>
 				    </td>
 				    <td width="25%" id="temcaixa">
-				    	<input type = "text" id="caixareg" name = "regcodpostal" value=""></input>
+				    	<input type = "text" id="caixareg" name = "regcodpostal" value=<?php echo $zipcode; ?>></input>
 				    </td>
 				    <td width="25%" id="temcaixa">
-				    	<input type = "text" id="caixareg" name = "regcidade" value=""></input>
+				    	<input type = "text" id="caixareg" name = "regcidade" value=<?php echo $cidade; ?>></input>
 				    </td>
 				  </tr>
 				  <tr>
@@ -152,17 +148,17 @@
 				  </tr>
 				  <tr>
 				    <td width="50%" id="temcaixa"  colspan="2">
-				    	<input type = "text" id="caixaregmaior" name = "regendereco2" value=""></input>
+				    	<input type = "text" id="caixaregmaior" name = "regendereco2" value=<?php echo $end2; ?>></input>
 				    </td>
 				    <td width="25%" id="temcaixa">
-				    	<input type = "text" id="caixareg" name = "regregiao" value=""></input>
+				    	<input type = "text" id="caixareg" name = "regregiao" value=<?php echo $reg; ?>></input>
 				    </td>
 				    <td width="25%" id="temcaixa">
-				    	<input type = "text" id="caixareg" name = "regpais" value=""></input>
+				    	<input type = "text" id="caixareg" name = "regpais" value=<?php echo $pais; ?>></input>
 				    </td>
 				  </tr>
 				  <tr>
-				    <td width="50%"  colspan="2"><span class="error"><?php echo $MsgErro;?></span></td><td width="25%"></td><td width="25%"><button type = "submit" name="cmdsubmit" value="">Registar</button><button type = "reset" name="cmdreset" value="">Limpar Dados</button></td>
+				    <td width="50%"  colspan="2"><span class="error"><?php echo $MsgErro;?></span></td><td width="25%"></td><td width="25%"><button type = "submit" name="cmdsubmit" value="">Alterar dados</button></td>
 				  </tr>
 							  
 				</table>
