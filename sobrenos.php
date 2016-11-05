@@ -59,7 +59,7 @@ include ('Resources/footer.php');
 
 					<div style="text-align:center;">
 						<h2>Rafael Quintão</h2>
-						<form action="http://www.ojogo.pt">
+						<form action="https://paginas.fe.up.pt/~ee12113/trabalhosSiem/trabalhoHTML/">
 							<button type="submit" class="aboutusbutton">Página Pessoal</button>
 						</form>
 					</div>

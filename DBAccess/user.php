@@ -157,9 +157,35 @@
 	}
 
 	function getnomeusuario($nome) {
-		include '../Common/connectdb.php';
+		include 'Common/connectdb.php';
 
 		$query = "select nomeusuario from utilizador where nome = '".$nome."';";
+
+		$result = pg_exec($conn, $query);
+		if (!$result) {
+		  echo "An error occurred.\n";
+		  exit;
+		}
+
+		$row = pg_fetch_array($result, 0); //obter a primeira linha [0]
+		
+		if($row!=null) {
+			$name = $row[0];
+		} else {
+			$name = null;
+		}
+
+
+		pg_close($conn);
+
+		return $name;
+
+	}
+
+	function gettelemovel($nome) {
+		include 'Common/connectdb.php';
+
+		$query = "select telemovel from utilizador where nome = '".$nome."';";
 
 		$result = pg_exec($conn, $query);
 		if (!$result) {

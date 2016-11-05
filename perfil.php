@@ -39,7 +39,7 @@
 				  </tr>
 				  <tr>
 				    <td width="50%" colspan="2">
-				    	<?php echo $nom; ?>
+				    	<?php echo getnomeusuario($nom); ?>
 				    </td>
 				    <td width="50%" colspan="2">
 				    	<?php echo getemail($nom); ?>
@@ -53,10 +53,10 @@
 				  </tr>
 				  <tr>
 				  	<td width="25%" id="temcaixa">
-				  		<input type = "text" id="caixareg" name = "regusername" value=""></input>
+				  		<?php echo $nom; ?>
 				  	</td>
 				    <td width="25%" id="temcaixa">
-				    	<input type = "text" id="caixareg" name = "regtelemovel" value=""></input>
+				    	<?php echo gettelemovel($nom); ?>
 				    </td>
 				    <td width="25%" id="temcaixa">
 				    	<input type = "password" id="caixareg" name = "regpassword1" value=""></input>
