@@ -34,20 +34,23 @@
 
 			<table class="tabelapesquisa">
 				  <tr>
-				    <th width="20%">Imagem</th><th width="20%">Nome</th><th width="20%">Marca</th><th width="20%">Preço</th><th width="20%">Adicionar ao carrinho</th>
-				  </tr>
-					
+					    <th width="20%">Imagem</th><th width="20%">Nome</th><th width="20%">Marca</th><th width="20%">Preço</th><th width="20%">Adicionar ao carrinho</th>
+					  </tr>
 				  <?php $res=verpeças($_POST['caixapesquisa']);
 
 				  	while ($row = pg_fetch_assoc($res))
 					{ 
+<<<<<<< HEAD
 					    echo '<tr><td width="20%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="20%">'.$row["nome"].'</td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td><td width="20%"><img src="../TP2/Resources/cart.png" class="carrinho" /></td></tr>';
+=======
+					    echo '<tr><td width="20%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="20%">'.$row["nome"].'</td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td></a><td width="20%"><img src="../TP2/Resources/cart.png" class="carrinho" /></td></tr>';
+>>>>>>> origin/master
 
 					} 
 					
 				  ;?>
-				  
-							  
+				  </form>
+				    
 			</table>
 	
 
