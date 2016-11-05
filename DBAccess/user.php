@@ -86,7 +86,7 @@
 		$id = $row[0] + 1;
 
 		$password = encrypt($pass);
-		$query2 = "INSERT INTO utilizador (id,nome,telefone,nomeusuario, password) VALUES (".$id.",'".$username."',".$telemovel.",'".$nome."','".$password."');";
+		$query2 = "INSERT INTO utilizador (id,nome,telefone,nomeusuario, email, password) VALUES (".$id.",'".$username."',".$telemovel.",'".$nome."','".$email."','".$password."');";
 
 
 		$result2 = pg_exec($conn, $query2);
@@ -98,6 +98,87 @@
 		pg_close($conn);
 
 		return $result2;
+
+	}
+
+	function getadress($nome) {
+		include '../Common/connectdb.php';
+
+		$query = "select morada from utilizador where nome = '".$nome."';";
+
+
+		$result = pg_exec($conn, $query);
+		if (!$result) {
+		  echo "An error occurred.\n";
+		  exit;
+		}
+
+		$row = pg_fetch_array($result, 0); //obter a primeira linha [0]
+		
+		if($row!=null) {
+			$name = $row[0];
+		} else {
+			$name = null;
+		}
+
+
+		pg_close($conn);
+
+		return $name;
+
+	}
+
+	function getemail($nome) {
+		include '../TP2/Common/connectdb.php';
+
+		$query = "select email from utilizador where nome = '".$nome."';";
+
+
+		$result = pg_exec($conn, $query);
+		if (!$result) {
+		  echo "An error occurred.\n";
+		  exit;
+		}
+
+		$row = pg_fetch_array($result, 0); //obter a primeira linha [0]
+		
+		if($row!=null) {
+			$name = $row[0];
+		} else {
+			$name = null;
+
+
+		}
+
+		echo $name;
+		pg_close($conn);
+
+		return $name;
+
+	}
+
+	function getnomeusuario($nome) {
+		include '../Common/connectdb.php';
+
+
+		$result = pg_exec($conn, $query);
+		if (!$result) {
+		  echo "An error occurred.\n";
+		  exit;
+		}
+
+		$row = pg_fetch_array($result, 0); //obter a primeira linha [0]
+		
+		if($row!=null) {
+			$name = $row[0];
+		} else {
+			$name = null;
+		}
+
+
+		pg_close($conn);
+
+		return $name;
 
 	}
 
