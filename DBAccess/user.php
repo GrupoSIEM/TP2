@@ -150,7 +150,6 @@
 
 		}
 
-		echo $name;
 		pg_close($conn);
 
 		return $name;
@@ -160,6 +159,7 @@
 	function getnomeusuario($nome) {
 		include '../Common/connectdb.php';
 
+		$query = "select nomeusuario from utilizador where nome = '".$nome."';";
 
 		$result = pg_exec($conn, $query);
 		if (!$result) {

@@ -39,16 +39,18 @@
 				  <tr>
 				    <th width="20%">Imagem</th><th width="20%">Nome</th><th width="20%">Marca</th><th width="20%">Preço</th><th width="20%">Tirar do carrinho</th>
 				  </tr>
-					
+					<form method="POST" action="Common/removerdocarrinho.php">
 				  <?php $res=getitemscart($_SESSION['username']);
 
-				  	while ($row = pg_fetch_assoc($res))
+				  	while ($row = pg_fetch_array($res))
 					{ 
-					    echo '<tr><td width="20%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="20%">'.$row["nome"].'</td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td><td width="20%"><img src="../TP2/Resources/X.png" class="carrinho" /></td></tr>';
+					    echo '<tr><td width="20%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="20%">'.$row["nome"].'</td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td><td width="20%"><button type = "submit" name="idcarrinho" value="'.$row[0].'"><img src="../TP2/Resources/X.png" class="carrinho" /></button></td></tr>';
 
 					} 
 					
-				  ;?>
+				  ?>
+
+				  </form>
 				  
 							  
 			</table>

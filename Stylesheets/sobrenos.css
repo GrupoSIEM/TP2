@@ -1,6 +1,7 @@
 #sobrenos {
-    padding: 5% 20%;
+    padding: 2% 20%;
     display: block;
+    height: 100%;
 
 }
 
@@ -23,7 +24,7 @@
 
 	display: block;
     margin: 0 auto;
-    height: 400px;
+    height: 300px;
     width: auto;
 
 
@@ -34,7 +35,7 @@
 
 	display: block;
     margin: 0 auto;
-    height: 400px;
+    height: 300px;
     width: auto;
 
 
@@ -49,3 +50,4 @@
 
 
 }
+

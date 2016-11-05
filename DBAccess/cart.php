@@ -60,11 +60,49 @@ function getitemscart($username){
 	return $result;
 }
 
-function erasefromcart(){
+function removefromcart($id){
 
-	echo "ola";
+	include '../Common/connectdb.php';
 
 
+	$query2 = "DELETE FROM carrinho WHERE id=".$id.";";
+
+
+	$result2 = pg_exec($conn, $query2);
+	if (!$result2) {
+		echo "An error occurred.\n";
+		exit;
+	}
+
+	pg_close($conn);
+
+	return $id;
+
+}
+
+
+
+
+function addtocart($idpeca, $username) {
+	include '../Common/connectdb.php';
+
+	$query1 = "select max(id) from carrinho;";
+	$result1 = pg_exec($conn, $query1);
+		$row = pg_fetch_array($result1, 0); //obter a primeira linha [0]
+		$id = $row[0] + 1;
+
+		$query2 = "INSERT INTO carrinho (id, nome, idpeca) VALUES (".$id.",'".$username."',".$idpeca.");";
+
+
+		$result2 = pg_exec($conn, $query2);
+		if (!$result2) {
+			echo "An error occurred.\n";
+			exit;
+		}
+
+		pg_close($conn);
+
+		return $result2;
 
 }
 

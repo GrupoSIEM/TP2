@@ -19,6 +19,7 @@
 				padding: 0;
 			}
 
+
 		</style>
 	</head>
 
@@ -28,6 +29,7 @@
 		<?php include 'Common/connectdb.php';?> <!-- Conexão à base de dados -->
 		<?php include 'DBAccess/user.php';?> <!-- Biblioteca com funçoes que acedem à tabela user na BD -->
 		<?php include 'DBAccess/pecas.php';?> <!-- Biblioteca com funçoes que acedem à tabela peças na BD -->
+		
 
 		<div class="container">
 			<p>Resultados encontrados para a pesquisa: <?php echo $_POST['caixapesquisa']; ?></p>
@@ -36,16 +38,17 @@
 				  <tr>
 					    <th width="20%">Imagem</th><th width="20%">Nome</th><th width="20%">Marca</th><th width="20%">Preço</th><th width="20%">Adicionar ao carrinho</th>
 					  </tr>
+				<form method="POST" action="Common/adicionarcarrinho.php">
 				  <?php $res=verpeças($_POST['caixapesquisa']);
 
 				  	while ($row = pg_fetch_assoc($res))
 					{ 
-					    echo '<tr><td width="20%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="20%">'.$row["nome"].'</td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td></a><td width="20%"><img src="../TP2/Resources/cart.png" class="carrinho" /></td></tr>';
+					    echo '<tr><td width="20%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="20%">'.$row["nome"].'</td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td></a><td width="20%"><button type = "submit" name="idpeca" value="'.$row["id"].'"><img src="../TP2/Resources/cart.png" class="carrinho" /></button></td></tr>';
 
 					} 
 					
 				  ;?>
-				  </form>
+				</form>
 				    
 			</table>
 	

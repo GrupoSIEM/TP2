@@ -39,7 +39,7 @@
 				  </tr>
 				  <tr>
 				    <td width="50%" colspan="2">
-				    	<?php echo nl2br ("\t".$nom); ?>
+				    	<?php echo $nom; ?>
 				    </td>
 				    <td width="50%" colspan="2">
 				    	<?php echo getemail($nom); ?>
