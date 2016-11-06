@@ -12,8 +12,9 @@
 		<?php
 
 			addtocart($_POST['idpeca'], $_SESSION['username']);
+			echo $_POST['pesq'];
 
-			exit(header("Location: ../pesquisa.php"));
+			exit(header("Location: ../pesquisa.php?pesq=".$_POST['pesq1']));
 
 		?>
 		

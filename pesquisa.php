@@ -19,7 +19,22 @@
 				padding: 0;
 			}
 
+			a:link {
+			    text-decoration: none;
+			    color:black;
+			}
 
+			a:visited {
+			    text-decoration: none;
+			}
+
+			a:hover {
+			    text-decoration: underline;
+			}
+
+			a:active {
+			    text-decoration: underline;
+			}
 		</style>
 	</head>
 
@@ -32,27 +47,26 @@
 		
 
 		<div class="container">
-			<p>Resultados encontrados para a pesquisa: <?php echo $_POST['caixapesquisa']; ?></p>
+			<p>Resultados encontrados para a pesquisa: <?php echo $_GET["pesq"]; ?></p>
 
 			<table class="tabelapesquisa">
 				  <tr>
 					    <th width="20%">Imagem</th><th width="20%">Nome</th><th width="20%">Marca</th><th width="20%">Preço</th><th width="20%">Adicionar ao carrinho</th>
 					  </tr>
 				<form method="POST" action="Common/adicionarcarrinho.php">
-				  <?php $res=verpeças($_POST['caixapesquisa']);
+				  <?php $res=verpeças($_GET["pesq"]);
 
 				  	while ($row = pg_fetch_assoc($res))
 					{ 
-					    echo '<tr><td width="20%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="20%">'.$row["nome"].'</td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td></a><td width="20%"><button type = "submit" name="idpeca" value="'.$row["id"].'"><img src="../TP2/Resources/cart.png" class="carrinho" /></button></td></tr>';
+					    echo '<tr><td width="20%"><a href="produto.php?id='.$row["id"].'"><img src="'.$row["link"].'" class="imagens" /></a> </td><td width="20%"><a href="produto.php?id='.$row["id"].'">'.$row["nome"].'</a></td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td><td width="20%"><button type = "submit" name="idpeca" value="'.$row["id"].'"><img src="../TP2/Resources/cart.png" class="carrinho" /></button></td></tr>';
 
 					} 
-					
+					echo '<input type="hidden" name="pesq1" value="'.$_GET["pesq"].'">';
 				  ;?>
+
 				</form>
 				    
 			</table>
-	
-
 
 		</div>
 

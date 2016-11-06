@@ -64,7 +64,7 @@
 				    <td width="100%" colspan="2" id="temdados"><?php echo nl2br (getadress($nom)); ?></td>
 				  </tr>
 				  <tr>
-				    <td width="100%" colspan="2"><button type = "submit" name="cmdsubmit" value="">Alterar dados</button></td>
+				    <td width="100%" colspan="2"><button class="tabela" type = "submit" name="cmdsubmit" value="">Alterar dados</button></td>
 				  </tr>
 							  
 				</table>

@@ -158,7 +158,7 @@
 				    </td>
 				  </tr>
 				  <tr>
-				    <td width="50%"  colspan="2"><span class="error"><?php echo $MsgErro;?></span></td><td width="25%"></td><td width="25%"><button type = "submit" name="cmdsubmit" value="">Alterar dados</button></td>
+				    <td width="50%"  colspan="2"><span class="error"><?php echo $MsgErro;?></span></td><td width="25%"></td><td width="25%"><button class="tabela" type = "submit" name="cmdsubmit" value="">Alterar dados</button></td>
 				  </tr>
 							  
 				</table>

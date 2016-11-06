@@ -17,7 +17,7 @@
 
       			
 
-				<form method="POST" action="pesquisa.php"> 
+				<form method="POST" action="../TP2/Common/pesquisascript.php"> 
 
 	      			<div class="coluna" id="caixapesquisacss">
 	      				
