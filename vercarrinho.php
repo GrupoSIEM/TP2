@@ -20,13 +20,7 @@
 				padding: 0;
 			}
 
-			a{	
-				color: black;
-				text-decoration: none;
-
-
-
-				}
+			
 
 		</style>
 
