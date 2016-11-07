@@ -62,6 +62,7 @@
 
 					} 
 					echo '<input type="hidden" name="pesq1" value="'.$_GET["pesq"].'">';
+					echo '<input type="hidden" name="tipo" value="pesquisa">';
 				  ;?>
 
 				</form>

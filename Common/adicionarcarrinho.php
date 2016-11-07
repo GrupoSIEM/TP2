@@ -11,10 +11,17 @@
 		<?php include '../DBAccess/cart.php';?> <!-- Biblioteca com funçoes que acedem à tabela carrinho na BD -->
 		<?php
 
-			addtocart($_POST['idpeca'], $_SESSION['username']);
-			echo $_POST['pesq'];
+			if($_POST['tipo']=="pesquisa") {
+				addtocart($_POST['idpeca'], $_SESSION['username']);
 
-			exit(header("Location: ../pesquisa.php?pesq=".$_POST['pesq1']));
+				exit(header("Location: ../pesquisa.php?pesq=".$_POST['pesq1']));
+			} elseif ($_POST['tipo']=="produto") {
+				addtocart($_POST['idpeca'], $_SESSION['username']);
+
+				exit(header("Location: ../produto.php?id=".$_POST['idpeca']));
+
+			}
+
 
 		?>
 		
