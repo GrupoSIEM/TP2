@@ -51,7 +51,7 @@
 
 	
 
-
+<form method="POST" action="enviarparaencomenda.php">
 		
 		<table>
 				  <tr>
@@ -89,6 +89,7 @@
 				  </tr>
 							  
 				</table>
+	</form>
 
 	</div>
 
