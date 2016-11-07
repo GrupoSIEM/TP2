@@ -17,9 +17,9 @@
 		while ($row = pg_fetch_array($result))
 					{     
 					   $string.=$row["idpeca"];		//FORMATA A STRING PARA INCLUIR NA DB
-					   $string.=",";  
-					   $quantidade=$row["quantidade"];
-					   $quantidade=",";
+					   $string.=",";
+					   $quantidade.=strval($row["quantidade"]);
+					   $quantidade.=",";
 
 					} 
 
@@ -31,7 +31,7 @@ echo $quantidade;
 				  	
 
 
-	//header("Location: pinicial.php");
+	exit(header("Location: pinicial.php"));
 
 
 ?>

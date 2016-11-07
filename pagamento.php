@@ -28,7 +28,7 @@
 	<div class="coluna" id="containergeral">
 
 
-	<h4>Possui no seu carrinho um total de 
+	Possui no seu carrinho um total de 
 
 	<?php $contagemArtigos = getarticlesnumber($_SESSION['username']);
 		echo $contagemArtigos;
@@ -37,17 +37,9 @@
 	  	echo $preçototal;
 	  ?>
 
-	  €. Por favor confirme os artigos no carrinho e a morada de envio antes de prosseguir.</h4>
+	  €. Por favor confirme os artigos no carrinho e a morada de envio antes de prosseguir. <br><br>
 
-	  <h4>Morada de envio:</h4>
-
-	  <h5>
-
-	  <?php $morada = getadress($_SESSION['username']);
-	  echo $morada;
-	   ?>
-	   	 
-	   </h5>
+	  
 
 	
 
@@ -61,26 +53,33 @@
 				    <td width="50%"></td><td width="50%"></td>
 				  </tr>
 				  <tr>
-				    <td width="50%">Nome indicado no cartão:</td><td width="50%">CVC/CDV2:</td>
+				    <td width="90%" colspan="2">Nome indicado no cartão:</td>
 				  </tr>
 				  <tr>
-				    <td width="50%" id="temdados">
+				    <td width="90%" colspan="2" id="temdados">
 				    	<input class="text" id="NOMECARTAO" value=""></input>
 				    </td>
-				    <td width="50%" id="temdados">
-				    	<input class="text" id="CVC" value=""></input>
+				    
+				  </tr>
+				  <tr>
+				    <td width="90%" colspan="2">Número do cartão:</td>
+				  </tr>
+				  <tr>
+				    <td width="90%" colspan="2" id="temdados">
+				    	<input class="text" id="NOMECARTAO" value=""></input>
 				    </td>
+				    
 				  </tr>
 				  <tr>
-				    <td width="50%">Data de validade:</td>
-				    <td width="50%"></td>
+				    <td width="60%">Data de validade:</td>
+				    <td width="40%">CVC/CDV2:</td>
 				  </tr>
 				  <tr>
-				  	<td width="50%" id="temdados">
+				  	<td width="70%" id="temdados">
 				  		  <input type="month" /> 
 				  	</td>
-				    <td width="50%" id="temdados">
-				    	
+				    <td width="30%" id="temdados">
+				    	<input class="text" width="100%" id="CVC" value=""></input>
 				    </td>
 				  </tr>
 				 
@@ -90,6 +89,16 @@
 							  
 				</table>
 	</form>
+
+	<h4>Morada de envio:</h4>
+
+	  <h5>
+
+	  <?php $morada = getadress($_SESSION['username']);
+	  echo $morada;
+	   ?>
+	   	 
+	   </h5>
 
 	</div>
 

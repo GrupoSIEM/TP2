@@ -49,10 +49,7 @@ function getitemsencomenda($username){
 
 include '../TP2/Common/connectdb.php';
 
-	$query = "SELECT carrinho.nome, idpeca, quantidade FROM carrinho
-			 INNER JOIN peças 
-			 ON carrinho.idpeca=peças.id
-			 where carrinho.nome='$username';";
+	$query = "SELECT nome, idpeca, quantidade FROM carrinho where nome='$username';";
 
 	$result = pg_exec($conn, $query);
 
