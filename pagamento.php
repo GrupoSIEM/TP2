@@ -11,18 +11,47 @@
 <body>
 
 <?php
+	
 	include ('Common/sessioncheck.php');
 
 // serve the page normally.
 
 	include ('Resources/headerlogged.php');
 	include ('Resources/footer.php');
+	include ('DBAccess/user.php');
+
 ?>
 	<div class="coluna" id="containerimagemesquerda">
 		<img src="Resources/pay.png" id="pay"></img>
 	</div>
 
 	<div class="coluna" id="containergeral">
+
+
+	<h4>Possui no seu carrinho um total de 
+
+	<?php $contagemArtigos = getarticlesnumber($_SESSION['username']);
+		echo $contagemArtigos;
+	 ?> artigos num valor total de
+	  <?php $preçototal = @preçototal($_SESSION['username']);
+	  	echo $preçototal;
+	  ?>
+
+	  €. Por favor confirme os artigos no carrinho e a morada de envio antes de prosseguir.</h4>
+
+	  <h4>Morada de envio:</h4>
+
+	  <h5>
+
+	  <?php $morada = getadress($_SESSION['username']);
+	  echo $morada;
+	   ?>
+	   	 
+	   </h5>
+
+	
+
+
 		
 		<table>
 				  <tr>

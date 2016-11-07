@@ -69,7 +69,7 @@
 									</button>
 
 									<div class="dropdown-content">
-										<a href="#">Pagamento</a>
+										<a href="pagamento.php">Pagamento</a>
 										<a href="vercarrinho.php">Ver Artigos</a>
 									</div>
 								
