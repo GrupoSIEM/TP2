@@ -45,14 +45,14 @@
 
 			<table class="tabelapesquisa">
 				  <tr>
-				    <th width="16.67%">Imagem</th><th width="16.67%">Nome</th><th width="16.67%">Marca</th><th width="16.67%">Preço</th><th width="16.67%">Quantidade</th><th width="16.67%">Tirar do carrinho</th>
+				    <th width="14.2857%">Imagem</th><th width="14.2857%">Nome</th><th width="14.2857%">Marca</th><th width="14.2857%">Preço p/unidade</th><th width="14.2857%">Preço</th><th width="14.2857%">Quantidade</th><th width="14.2857%">Tirar do carrinho</th>
 				  </tr>
 					<form method="POST" action="Common/removerdocarrinho.php">
 				  <?php $res=getitemscart($_SESSION['username']);
 
 				  	while ($row = pg_fetch_array($res))
 					{ 
-					    echo '<tr><td width="16.67%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="16.67%"><a href="produto.php?id='.$row["id"].'">'.$row["nome"].'</a></td><td width="16.67%">'.$row["marca"].'</td><td width="16.67%">'.$row["preço"].' €</td><td width="16.67%">'.$row["quantidade"].'</td><td width="16.67%"><button type = "submit" name="idcarrinho" value="'.$row[0].'"><img src="../TP2/Resources/X.png" class="carrinho" /></button></td></tr>';
+					    echo '<tr><td width="14.2857%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="14.2857%"><a href="produto.php?id='.$row["id"].'">'.$row["nome"].'</a></td><td width="14.2857%">'.$row["marca"].'</td><td width="14.2857%">'.$row["preço"].' €</td><td width="14.2857%">'.$row["preço"]*$row["quantidade"].' €</td><td width="14.2857%">'.$row["quantidade"].'</td><td width="14.2857%"><button type = "submit" name="idcarrinho" value="'.$row[0].'"><img src="../TP2/Resources/X.png" class="carrinho" /></button></td></tr>';
 
 					} 
 					
