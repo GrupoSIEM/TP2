@@ -10,7 +10,11 @@ function adicionarencomenda($nome, $ids, $quantidades, $preço){
 		$row = pg_fetch_array($result1, 0); //obter a primeira linha [0]
 		$id = $row[0] + 1;
 
-		$query2 = "INSERT INTO encomenda (id,nome,datapagamento,dataentrega, idspeças, quantidades, preço) VALUES (".$id.",'".$username."',".$telemovel.",'".$nome."','".$email."','".$password."','".$morada."');";
+		$time=time();
+		$datapagamento=date('Y-m-d H:i:s',$time - (1*60*60));
+		$dataentrega=date('Y-m-d',$time + (15 * 24 * 60 * 60));
+
+		$query2 = "INSERT INTO encomenda (id,nome,datapagamento,dataentrega, idspeças, quantidades, preço) VALUES (".$id.",'".$nome."','".$datapagamento."','".$dataentrega."','".$ids."','".$quantidades."',".$preço.");";
 
 
 		$result2 = pg_exec($conn, $query2);
@@ -23,6 +27,18 @@ function adicionarencomenda($nome, $ids, $quantidades, $preço){
 
 		return $result2;
 
+}
+
+function getencomendas($username){
+
+	include '../TP2/Common/connectdb.php';
+
+	$query = "SELECT * FROM encomenda where nome='".$username."';";
+
+	$result = pg_exec($conn, $query);
+
+
+	return $result;
 }
 
 

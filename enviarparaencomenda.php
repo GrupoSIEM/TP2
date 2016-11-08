@@ -2,11 +2,9 @@
 
 	include ('Common/sessioncheck.php');
 	include ('DBAccess/cart.php');
+	include ('DBAccess/encomendadb.php');
 
 
-
-
-	//removeallitems($_SESSION['username']); //TA A FUNCIONAR. COMENTADO PARA TESTES
 
 	$preco =preçototal($_SESSION['username']);
 	$result=getitemsencomenda($_SESSION['username']);
@@ -27,9 +25,9 @@ echo $string;
 echo $quantidade;
 
 
-	adicionarencomenda($_SESSION['username'], $preço);
+	adicionarencomenda($_SESSION['username'], $string, $quantidade, $preco);
 				  	
-
+	removeallitems($_SESSION['username']);
 
 	exit(header("Location: pinicial.php"));
 
