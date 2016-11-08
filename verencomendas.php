@@ -41,7 +41,7 @@
 		<?php include 'DBAccess/encomendadb.php';?> <!-- Biblioteca com funçoes que acedem à tabela encomenda na BD -->
 
 		<div class="container">
-			<p>Os artigos do seu carrinho são: </p>
+			<p>As suas encomendas: </p>
 
 			<table class="tabelapesquisa">
 				  <tr>
@@ -66,7 +66,7 @@
 							$soma+=intval($pieces[$i]);
 						}
 
-					    echo '<tr><td width="14.28%">'.$row["id"].' </td><td width="14.28%">'.$row["datapagamento"].'</td><td width="14.28%">'.$row["dataentrega"].'</td><td width="14.28%">'.$estado.'</td><td width="14.28%">'.$soma.'</td><td width="14.28%">'.$row["preço"].' €</td><td width="14.28%">Ver Artigos</td></tr>';
+					    echo '<tr><td width="14.28%">'.$row["id"].' </td><td width="14.28%">'.$row["datapagamento"].'</td><td width="14.28%">'.$row["dataentrega"].'</td><td width="14.28%">'.$estado.'</td><td width="14.28%">'.$soma.'</td><td width="14.28%">'.$row["preço"].' €</td><td width="14.28%"><a href="verartigosencomendas.php?id='.$row["id"].'&ids='.$row["idspeças"].'&quantidades='.$row["quantidades"].'">Ver Artigos</a></td></tr>';
 
 					} 
 					

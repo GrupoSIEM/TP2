@@ -20,6 +20,11 @@
 
 				exit(header("Location: ../produto.php?id=".$_POST['idpeca']));
 
+			}  elseif ($_POST['tipo']=="destaques") {
+				addtocart($_POST['idpeca'], $_SESSION['username']);
+
+				exit(header("Location: ../destaques.php"));
+
 			}
 
 

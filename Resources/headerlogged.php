@@ -2,6 +2,33 @@
 <html>
 	<head>
 		<title>RG header</title>
+		<style>
+			header ul {
+				list-style-type: none;
+			    margin-bottom: 0;
+			    padding: 0;
+			    overflow: hidden;
+			    background-color: #D47404;
+
+			}
+
+			header ul li {
+			    float: left;
+			}
+
+			header ul li a {
+			    display: block;
+			    color: white;
+			    text-align: center;
+			    padding: 14px 16px;
+			    text-decoration: none;
+			}
+
+			header ul li a:hover {
+			    background-color: #808080;
+			    text-decoration: none;
+			}
+		</style>
 		<link rel="stylesheet" type="text/css" href="Stylesheets/headerfooter.css">
 	</head>
 
@@ -30,7 +57,10 @@
 							      		
 
 							      		
-
+						<ul>
+						  <li><a href="../TP2/pesquisa.php?pesq=">Artigos</a></li>
+						  <li><a href="../TP2/destaques.php" style="color: white;">Destaques</a></li>
+						</ul>
 
 					      		
 					      	
@@ -44,13 +74,13 @@
 		      		</div>
 				</form>
 
-	      		<div class="coluna" id="carrinho">
+	      		<div class="coluna" id="carrinho" style="overflow: visible;">
 
 
-									<div class="dropdown">
+									<div class="dropdown" style="overflow: visible;">
 
 								
-									<button class="dropbtn" id="asd">
+									<button class="dropbtn" id="asd" style="overflow: visible;">
 
 									<?php 
 
@@ -60,8 +90,9 @@
 										$contagemArtigos = getarticlesnumber($_SESSION['username']);
 										$preçototal = sprintf('%0.2f', @preçototal($_SESSION['username']));
 										 
-
+										
 										echo "Artigos: ".$contagemArtigos. "";
+										echo '<img src="../TP2/Resources/cart.png" class="carrinho" style=" padding: 0 0 0 10px; width: auto; height: 50%;"/>';
 										echo nl2br ("\n Total: ".$preçototal. "€");
 										
 

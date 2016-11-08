@@ -41,24 +41,28 @@
 		<?php include 'DBAccess/pecas.php';?> <!-- Biblioteca com funçoes que acedem à tabela peças na BD -->
 
 		<div class="container">
-			<p>Os artigos do seu carrinho são: </p>
+			<p>Os artigos da sua encomenda com id <?php echo $_GET["id"]; ?> são: </p>
 
 			<table class="tabelapesquisa">
 				  <tr>
-				    <th width="16.67%">Imagem</th><th width="16.67%">Nome</th><th width="16.67%">Marca</th><th width="16.67%">Preço</th><th width="16.67%">Quantidade</th><th width="16.67%">Tirar do carrinho</th>
+				    <th width="20%">Imagem</th><th width="20%">Nome</th><th width="20%">Marca</th><th width="20%">Preço</th><th width="20%">Quantidade</th>
 				  </tr>
-					<form method="POST" action="Common/removerdocarrinho.php">
-				  <?php $res=getitemscart($_SESSION['username']);
+					
+				  <?php $res=getpecas($_GET["ids"]);
+
+				  $pieces = explode(",", $_GET["quantidades"]);
+				  $i=0;
 
 				  	while ($row = pg_fetch_array($res))
 					{ 
-					    echo '<tr><td width="16.67%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="16.67%"><a href="produto.php?id='.$row["id"].'">'.$row["nome"].'</a></td><td width="16.67%">'.$row["marca"].'</td><td width="16.67%">'.$row["preço"].' €</td><td width="16.67%">'.$row["quantidade"].'</td><td width="16.67%"><button type = "submit" name="idcarrinho" value="'.$row[0].'"><img src="../TP2/Resources/X.png" class="carrinho" /></button></td></tr>';
+					    echo '<tr><td width="20%"><img src="'.$row["link"].'" class="imagens" /> </td><td width="20%"><a href="produto.php?id='.$row["id"].'">'.$row["nome"].'</a></td><td width="20%">'.$row["marca"].'</td><td width="20%">'.$row["preço"].' €</td><td width="20%">'.$pieces[$i].'</td></tr>';
+
+					    $i+=1;
 
 					} 
 					
 				  ?>
 
-				  </form>
 				  
 							  
 			</table>

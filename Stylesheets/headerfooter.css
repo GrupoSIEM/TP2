@@ -13,7 +13,7 @@ header{
     position: relative;
     top: 0;
     width: 100%;
-    height: 95px;
+    height: 98px;
     display: inline-block;
 
     overflow: visible;
@@ -120,14 +120,14 @@ footer a:hover, footer a:active {
 
 #caixapesquisacss{
 
-    margin: 25px 15px 0% 5%;
+    margin: 10px 15px 0% 5%;
     width: 25%;
 
 
 }
 
 #colunaok{
-    margin: 23px 0%;
+    margin: 8px 0%;
 
 
 }

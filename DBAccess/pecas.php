@@ -18,6 +18,50 @@
 
 	}
 
+	function verpeçasdestaque() {
+		include '../TP2/Common/connectdb.php';
+
+		$query = "select * from peças where destaque = true;";
+
+
+		$result = pg_exec($conn, $query);
+		if (!$result) {
+		  echo "An error occurred.\n";
+		  exit;
+		}
+
+
+
+		return $result;
+
+	}
+
+	function getpecas($ids) {
+		include '../TP2/Common/connectdb.php';
+
+		$pieces = explode(",", $ids);
+
+		$query = "select link, id, nome, marca, preço from peças where id = ";
+		$query.=$pieces[0];
+
+		for ($i=1; $i < sizeof($pieces)-1; $i++) { 
+			$aux=" OR id = ".$pieces[$i];
+			$query.=$aux;
+		}
+
+		$query.=";";
+
+		$result = pg_exec($conn, $query);
+		if (!$result) {
+		  echo "An error occurred.\n";
+		  exit;
+		}
+
+		pg_close($conn);
+
+		return $result;
+	}
+
 	function getnomepeca($id) {
 		include '../TP2/Common/connectdb.php';
 

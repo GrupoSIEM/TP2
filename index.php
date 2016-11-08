@@ -30,12 +30,21 @@
 		<?php 
 
 				$num = rand(1,7);
-				echo '<div class="center"><img src="Resources/img'.$num.'.jpg" style="width:100%"><br></div>';
+				echo '<div class="center">
+
+				Este website foi desenvolvido no âmbito da disciplina de Sistemas de Informação Empresariais. Ao entrar no nosso website poderá ver e comprar produtos informáticos. Ao lado encontra as credenciais para fazer login. É também possível realizar um registo. <p></p>
+
+				<div class="coluna"><img src="Resources/img'.$num.'.jpg" style="width:95%"></div> <div class="coluna"><h2>Login: cliente <br> Password: cliente</h2></div>
+
+
+
+				
+				</div>';
 
 		;?>
 		
 
-
+	
 
 		
 
