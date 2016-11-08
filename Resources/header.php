@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html>
+<header>
 
-  <head>
+			<link rel="stylesheet" type="text/css" href="../TP2/Stylesheets/headerfooter.css">
 
-  	<title>RG header</title>
-		<link rel="stylesheet" type="text/css" href="../TP2/Stylesheets/headerfooter.css">
-  </head>
-
-
-  <body>
-		<header>
 			<div class="container">
 
       		<a href="../TP2/index.php"><img src="../TP2/Resources/headerLogo.png" class="headerLogo coluna"/></a>
@@ -69,8 +61,5 @@
 			
 			
 
-		</header>
+</header>
 
-  </body>
-
-</html>

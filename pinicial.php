@@ -11,6 +11,7 @@
 		}
 	</style>
 </head>
+
 <body>
 
 
@@ -20,17 +21,23 @@
 
 // serve the page normally.
 
-	include ('Resources/headerlogged.php');
-	include ('Resources/footer.php');
+	include ('Resources/headerlogged.php');  //inlcuir header
 
-?>
 
-		<?php 
 
-				$num = rand(1,7);
-				echo '<div class="center"><img src="Resources/img'.$num.'.jpg" style="width:100%"><br></div>';
+	$num = rand(1,7);
+	
+	echo '<div class="center"><img src="Resources/img'.$num.'.jpg" style="width:100%"><br></div>';
 
-		;?>
+
+	include ('Resources/footer.php');  //inclusao do footer
+
+
+;?>
+
+
+
+
 
 </body>
 </html>

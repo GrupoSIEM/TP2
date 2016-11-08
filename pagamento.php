@@ -17,7 +17,7 @@
 // serve the page normally.
 
 	include ('Resources/headerlogged.php');
-	include ('Resources/footer.php');
+	
 	include ('DBAccess/user.php');
 
 ?>
@@ -33,8 +33,8 @@
 	<?php $contagemArtigos = getarticlesnumber($_SESSION['username']);
 		echo $contagemArtigos;
 	 ?> artigos num valor total de
-	  <?php $preçototal = @preçototal($_SESSION['username']);
-	  	echo $preçototal;
+	  <?php  $preçototal = sprintf('%0.2f', @preçototal($_SESSION['username']));
+	  	echo $preçototal; 
 	  ?>
 
 	  €. Por favor confirme os artigos no carrinho e a morada de envio antes de prosseguir. <br><br>
@@ -105,6 +105,8 @@
 	<div class="coluna" id="containerimagemdireita">
 		<img src="Resources/pay2.png" id="pay2"></img>
 	</div>
+
+	<?php include ('Resources/footer.php'); ?>
 
 </body>
 </html>

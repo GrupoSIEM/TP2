@@ -1,39 +1,7 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>RG header</title>
-		<style>
-			header ul {
-				list-style-type: none;
-			    margin-bottom: 0;
-			    padding: 0;
-			    overflow: hidden;
-			    background-color: #D47404;
 
-			}
-
-			header ul li {
-			    float: left;
-			}
-
-			header ul li a {
-			    display: block;
-			    color: white;
-			    text-align: center;
-			    padding: 14px 16px;
-			    text-decoration: none;
-			}
-
-			header ul li a:hover {
-			    background-color: #808080;
-			    text-decoration: none;
-			}
-		</style>
-		<link rel="stylesheet" type="text/css" href="Stylesheets/headerfooter.css">
-	</head>
-
-	<body>
 		<header>
+
+			<link rel="stylesheet" type="text/css" href="Stylesheets/headerfooter.css"> 
 
 			
 			<div class="container">
@@ -147,6 +115,3 @@
 
       		</div>
       	</header>
-
-	</body>
-</html>
