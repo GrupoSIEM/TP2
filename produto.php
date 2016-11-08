@@ -50,7 +50,7 @@
 			<p><hr size="450%" width="1" align="center"></p>
 		</div>
 		<div class="coluna" style="width:55%">
-			<p><?php echo getdescricaopeca($_GET["id"]); ?></p>
+			<p><?php echo nl2br (getdescricaopeca($_GET["id"])); ?></p>
 		</div>
 
 	</div>

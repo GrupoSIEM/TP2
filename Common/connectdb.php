@@ -2,7 +2,7 @@
 
 
 
-  $conn = pg_connect("host=db.fe.up.pt dbname=siem1639 user=siem1639 password=");
+  $conn = pg_connect("host=db.fe.up.pt dbname=siem1639 user=siem1639 password=LmeGrjVv");
   
   if (!$conn) {
     echo "An error occured..\n";

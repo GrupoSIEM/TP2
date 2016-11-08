@@ -58,7 +58,7 @@
 										
 										
 										$contagemArtigos = getarticlesnumber($_SESSION['username']);
-										$preçototal = @preçototal($_SESSION['username']);
+										$preçototal = sprintf('%0.2f', @preçototal($_SESSION['username']));
 										 
 
 										echo "Artigos: ".$contagemArtigos. "";
