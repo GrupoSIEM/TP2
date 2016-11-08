@@ -2,13 +2,15 @@
 
 
 
-  $conn = pg_connect("host=db.fe.up.pt dbname=siem1639 user=siem1635 password=LmeGrjVv");
+  $conn = pg_connect("host=db.fe.up.pt dbname=siem1639 user=siem1639 password=");
   
   if (!$conn) {
     echo "An error occured..\n";
-    exit;
+    exit(header("Location: http://www.google.pt"));
 
-     $query_conn = 'SET search_path to "siemphp"';  	#define o schema
-	 $connect = pg_exec($conn, $query_conn);			#Selecciona o schema
+    $query_conn = 'ALTER DATABASE siem1639 SET search_path TO siemphp;';  	#define o schema
+	$connect = pg_exec($conn, $query_conn);			#Selecciona o schema
+
+    
   }
 ?>
